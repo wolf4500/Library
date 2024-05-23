@@ -1,0 +1,164 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Poppins;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 3fr 19fr 1.5fr;  
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1 / 2;
+    background-color: black;
+    border: 1px solid #474747;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 36px;
+    color: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #141414;
+}
+
+#addButton {
+    font-weight: bold;
+    margin-top: 20px;
+    height: 40px;
+    width: 120px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #C19A6B;
+}
+
+#addButton:hover {
+    background-color: orange;
+    border: 1px solid white;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    border: 1px solid #474747;
+}
+
+#modal {
+    border: 1px solid #474747;
+    border-radius: 10px;
+    background-color: #1a1919;
+    margin: auto;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-left: 130px;
+}
+
+.cancel {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #474747;
+    color: white;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    border: 1px solid white;
+
+}
+
+.input {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 400px;
+    height: 350px;
+    background-color: #1a1919;
+}
+
+.check {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    color: white;
+}
+
+#read {
+    margin-right: 5px;
+    accent-color: orange;
+}
+
+input {
+    background-color: #474747;
+    border: none;
+    color: white;
+}
+
+#confirm {
+    font-weight: bold;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: 	#C19A6B;
+}
+
+#confirm:hover {
+    background-color: orange;
+    border: 1px solid white;
+}
+
+.line, .lineLast {
+    height: 1px;
+    background-color: #474747;
+    margin-bottom: 10px;
+    
+}
+
+.line {
+    margin-bottom: 30px;
+}
+
