@@ -32,11 +32,13 @@ function render() {
     }
 }
 
+// Removes book 
 function removeBook(index) {
     myLibrary.splice(index, 1);
     render();
 }
 
+// Toggles the read status for a certain book
 function toggleRead(index) {
     myLibrary[index].read = !(myLibrary[index].read);
     render();
@@ -55,6 +57,18 @@ function addBookToLibrary() {
     render();
 }
 
+// Clears all input after submit or cancel button is clicked 
+function clearInput() {
+    document.querySelectorAll("input").forEach((element) => {
+        if (element.getAttribute("type") != "checkbox") {
+            element.value = "";
+        }
+        else {
+            element.checked = false;
+        }
+    })
+}
+
 // Modal pops up when add book button is clicked
 const modal = document.getElementById("modal");
 const addButton = document.querySelector("#addButton");
@@ -66,6 +80,7 @@ addButton.addEventListener("click", () => {
 const cancel = document.querySelector(".cancel");
 cancel.addEventListener("click", () => {
     modal.close();
+    clearInput();
 })
 
 // Submit button calls the addBookToLibrary function
@@ -73,5 +88,6 @@ const form = document.querySelector("#bookForm");
 form.addEventListener("submit", function(event){
     event.preventDefault();
     addBookToLibrary();
+    clearInput();
 })
 
