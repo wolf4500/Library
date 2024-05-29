@@ -10,31 +10,36 @@ function Book(title, author, pages, read) {
 }
 
 // Render function creates cards when called
-let i = 0
 function render() {
     let library = document.querySelector(".library");
-    let book = myLibrary[i];
-    let card = document.createElement("div");
-    let cardRead;
+    library.innerHTML = "";
+    for(let i = 0; i < myLibrary.length; i++) {
+        let book = myLibrary[i];
+        let card = document.createElement("div");
 
-    if (book.read == true) {
-        cardRead = "Has Been Read"
-    }
-    else {
-        cardRead = "Not Read Yet"
-    }
-
-    card.innerHTML = `<div class="innerCard">
-                            <strong>${book.title}</strong>
+        card.innerHTML = `<div class="innerCard">
+                            <h3><strong>${book.title}</strong></h3>
                             <div>By <strong>${book.author}</strong></div>
                             <div># of Pages: <strong>${book.pages}</strong></div>
-                            <div>Status: <strong>${cardRead}</strong></div>
-                        </div>
-                        <div class="remove">Remove</div>`
+                            <div>Status: <strong>${book.read ? "Has Been Read" : "Not Read Yet"}</strong></div>
+                          </div>
+                          <div class="buttons">
+                              <button onclick="removeBook(${i})" class="remove">Remove</button>
+                              <button onclick="toggleRead(${i})" class="toggle">Toggle Read</button>
+                          </div>`
+        card.className = "card";
+        library.appendChild(card);
+    }
+}
 
-    card.className = "card";
-    library.appendChild(card);
-    i += 1;
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    render();
+}
+
+function toggleRead(index) {
+    myLibrary[index].read = !(myLibrary[index].read);
+    render();
 }
 
 // Adds Book objects to the library array 
@@ -69,3 +74,4 @@ form.addEventListener("submit", function(event){
     event.preventDefault();
     addBookToLibrary();
 })
+
